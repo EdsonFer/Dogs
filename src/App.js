@@ -2,21 +2,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header'
 import { Home } from './pages/Home'
 import { Footer } from './components/Footer'
-import { Login } from './components/Login'
+import { Login } from './pages/Login'
+import { UserStorageProvider } from './contexts/UserContext'
 
 import './styles/global.scss'
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      <Footer />
+      <UserStorageProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login/*" element={<Login />} />
+        </Routes>
+        <Footer />
+      </UserStorageProvider>
     </BrowserRouter>
   );
 }
-
-export default App;
