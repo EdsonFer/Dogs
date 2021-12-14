@@ -27,7 +27,7 @@ export function UserHeader() {
 
     return (
         <header className={styles.header}>
-            <h1 className="title">Título</h1>
+            <h1 className="title">{title}</h1>
             <UserHeaderNav />
         </header>
     )
