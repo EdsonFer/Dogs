@@ -1,18 +1,27 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { UserStorageContext } from '../../contexts/UserContext'
+import { Image } from '../Image'
 import { PhotoComments } from '../PhotoComments'
+import { PhotoDelete } from '../PhotoDelete'
 import styles from './styles.module.scss'
 
 export function PhotoContent({ data }) {
+    const user = useContext(UserStorageContext)
     const { photo, comments } = data
+
     return (
         <div className={styles.photo}>
             <div className={styles.img}>
-                <img src={photo.src} alt={photo.title} />
+                <Image src={photo.src} alt={photo.title} />
             </div>
             <div className={styles.details}>
                 <div>
                     <p className={styles.author}>
-                        <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+                        {user.data && user.data.username === photo.author
+                            ? <PhotoDelete id={photo.id} />
+                            : <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+                        }
                         <span className={styles.visualizacoes}>{photo.acessos}</span>
                     </p>
                     <h1 className={styles.title}>
