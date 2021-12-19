@@ -8,16 +8,20 @@ import { Loading } from "../Loading";
 
 import styles from './styles.module.scss';
 
-export function FeedPhotos({ user, setModalPhoto }) {
+export function FeedPhotos({ page, user, setModalPhoto, setInfinite }) {
     const { data, loading, error, request } = useFetch()
 
     useEffect(() => {
         async function fetchPhotos() {
-            const { url, options } = PHOTOS_GET({ page: 1, total: 3, user })
-            const { json } = await request(url, options)
+            const total = 3
+            const { url, options } = PHOTOS_GET({ page, total, user })
+            const { response, json } = await request(url, options)
+            if (response && response.ok && json.length < total) {
+                setInfinite(false)
+            }
         }
         fetchPhotos()
-    }, [request, user])
+    }, [request, user, page, setInfinite])
 
     if (error) return <Error error={error} />
     if (loading) return <Loading />
