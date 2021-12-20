@@ -70,9 +70,20 @@
 			}
 		}
 	}
+}
 
-	.comments {
-		padding: 0 2rem;
+.single.photo {
+	grid-template-columns: 1fr;
+	height: auto;
+
+	.img {
+		grid-row: 1;
+		border-radius: 0.4rem;
+		overflow: hidden;
+	}
+
+	.details {
+		padding: 1rem 0px 0px 0px;
 	}
 }
 
