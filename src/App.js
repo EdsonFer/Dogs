@@ -9,6 +9,8 @@ import { UserStorageProvider } from './contexts/UserContext'
 
 import './styles/global.scss'
 import { Photo } from './components/Photo';
+import { UserProfile } from './components/UserProfile';
+import { NotFound } from './components/NotFound';
 
 export default function App() {
   return (
@@ -26,6 +28,8 @@ export default function App() {
               </ProtectedRoute>}
           />
           <Route path="foto/:id" element={<Photo />} />
+          <Route path="perfil/:user" element={<UserProfile />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </UserStorageProvider>

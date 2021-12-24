@@ -9,6 +9,7 @@ import { LoginPasswordLost } from '../LoginPasswordLost';
 import { LoginPasswordReset } from '../LoginPasswordReset';
 
 import styles from './styles.module.scss';
+import { NotFound } from '../../components/NotFound';
 
 export function Login() {
     const { login } = useContext(UserStorageContext)
@@ -22,6 +23,7 @@ export function Login() {
                     <Route path="/criar" element={<LoginCreate />} />
                     <Route path="/perdeu" element={<LoginPasswordLost />} />
                     <Route path="/resetar" element={<LoginPasswordReset />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
         </section>
