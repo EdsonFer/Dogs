@@ -10,7 +10,7 @@ Rede Social Focada em pets.
 
 ## 👨🏻‍💻 Projeto
 
-<a href="https://dogs-murex.vercel.app/" target="_blank" alt="Dogs">Dogs</a>
+<a href="https://dogs-murex.vercel.app/" target="_blank" alt="Dogs">Dogs</a> Link para o projeto 
 
 ## 🚀 Como executar
 
