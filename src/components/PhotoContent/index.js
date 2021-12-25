@@ -29,8 +29,7 @@ export function PhotoContent({ data, single }) {
                     </h1>
                     <ul className={styles.atributes}>
                         <li>{photo.peso} kg</li>
-                        <li>{photo.idade}anos</li>
-                        <li>{photo.peso}</li>
+                        <li>{photo.idade} ano{photo.idade > 1 ? 's' : ''}</li>
                     </ul>
                 </div>
             </div>
