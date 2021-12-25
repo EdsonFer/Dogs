@@ -8,6 +8,7 @@ import { Error } from "../../components/Error"
 import { useForm } from '../../hooks/useForm'
 
 import styles from './styles.module.scss';
+import { Head } from "../../components/Head";
 
 export const LoginForm = () => {
     const username = useForm()
@@ -25,6 +26,7 @@ export const LoginForm = () => {
 
     return (
         <section className="animeLeft">
+            <Head title="Login" />
             <h1 className="title">Login</h1>
 
             <form className={styles.form} onSubmit={handleSubmit}>

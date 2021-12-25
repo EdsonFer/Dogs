@@ -6,6 +6,7 @@ import { useForm } from "../../hooks/useForm"
 import { useFetch } from "../../hooks/useFetch"
 import { PASSWORD_RESET } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { Head } from "../../components/Head";
 
 
 export function LoginPasswordReset() {
@@ -37,7 +38,8 @@ export function LoginPasswordReset() {
     }
 
     return (
-        <div>
+        <section>
+            <Head title="Resete a senha" />
             <h1 className="title">Resete a Senha</h1>
             <form onSubmit={handleSubmit}>
                 <Input label="Nova senha" type="password" name="password" {...password} />
@@ -48,6 +50,6 @@ export function LoginPasswordReset() {
                 }
             </form>
             <Error error={error} />
-        </div>
+        </section>
     );
 }

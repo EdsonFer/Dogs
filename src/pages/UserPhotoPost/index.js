@@ -9,6 +9,7 @@ import { useForm } from '../../hooks/useForm'
 import { useFetch } from '../../hooks/useFetch'
 
 import styles from './styles.module.scss'
+import { Head } from "../../components/Head";
 
 export function UserPhotoPost() {
     const nome = useForm()
@@ -47,6 +48,7 @@ export function UserPhotoPost() {
 
     return (
         <section className={`${styles.photoPost} animeLeft`}>
+            <Head title="Poste suas fotos" />
             <form onSubmit={handleSubmit}>
                 <Input label="Nome" type="text" name="nome" {...nome} />
                 <Input label="Peso" type="number" name="peso" {...peso} />

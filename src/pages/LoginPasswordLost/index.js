@@ -4,6 +4,7 @@ import { Error } from "../../components/Error"
 import { useForm } from "../../hooks/useForm"
 import { useFetch } from "../../hooks/useFetch"
 import { PASSWORD_LOST } from "../../services/api"
+import { Head } from "../../components/Head"
 
 export function LoginPasswordLost() {
     const login = useForm()
@@ -22,6 +23,7 @@ export function LoginPasswordLost() {
 
     return (
         <section>
+            <Head title="Perdeu a senha?" />
             <h1 className="title">
                 Perdeu a Senha?
             </h1>

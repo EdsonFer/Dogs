@@ -5,6 +5,7 @@ import { USER_POST } from '../../services/api';
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { Error } from '../../components/Error';
+import { Head } from '../../components/Head'
 import { useForm } from '../../hooks/useForm'
 import { useFetch } from '../../hooks/useFetch';
 
@@ -32,6 +33,7 @@ export function LoginCreate() {
 
     return (
         <section className="animeLeft">
+            <Head title="Crie sua Conta" />
             <h1 className="title">Cadastre-se</h1>
 
             <form onSubmit={handleSubmit}>
